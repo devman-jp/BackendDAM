@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,6 +18,9 @@ public class Remitente {
 	private String apellido;
 	private String dni;
 	private String telefono;
+	
+	@OneToOne
+	private Paquete paquetes;
 	
 	public Integer getIdRemitente() {
 		return idRemitente;

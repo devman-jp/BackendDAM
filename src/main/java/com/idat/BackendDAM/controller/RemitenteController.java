@@ -14,7 +14,7 @@ import com.idat.BackendDAM.model.Remitente;
 import com.idat.BackendDAM.service.RemitenteService;
 
 @Controller
-@RequestMapping("/remitente")
+@RequestMapping("/v1/remitente")
 public class RemitenteController {
 	
 	@Autowired

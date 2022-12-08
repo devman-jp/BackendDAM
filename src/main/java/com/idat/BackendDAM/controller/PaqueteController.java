@@ -10,33 +10,29 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.idat.BackendDAM.model.Repartidor;
-import com.idat.BackendDAM.service.RepartidorService;
+import com.idat.BackendDAM.model.Paquete;
+import com.idat.BackendDAM.service.PaqueteService;
 
 @Controller
-@RequestMapping("/v1/reparditor")
-public class RepartidorController {
+@RequestMapping("/v1/paquete")
+public class PaqueteController {
 	
-
 	@Autowired
-	private RepartidorService service;
+	private PaqueteService service;
 	
 	@RequestMapping(path = "/listar", method = RequestMethod.GET)
-	public ResponseEntity<List<Repartidor>> listar(){
-		return new ResponseEntity<List<Repartidor>>(service.listar(), HttpStatus.OK) ;
+	public ResponseEntity<List<Paquete>> listar(){
+		return new ResponseEntity<List<Paquete>>(service.listar(), HttpStatus.OK);
 	}
 	
 	@RequestMapping(path = "/listar/{id}", method = RequestMethod.GET)
-	public ResponseEntity<Repartidor> obtenerPorId(@PathVariable Integer id){
-		
-		Repartidor repartidor = service.obtener(id);
-		
-		if( repartidor != null) {
-			return new ResponseEntity<Repartidor>(repartidor, HttpStatus.OK);
+	public ResponseEntity<Paquete> obtenerPorId(@PathVariable Integer id){
+		Paquete paquete = service.obtener(id);
+		if(paquete != null) {
+			return new ResponseEntity<Paquete>(paquete, HttpStatus.OK);
 		}else {
-			return new ResponseEntity<Repartidor>(HttpStatus.NOT_FOUND);
+			return new ResponseEntity<Paquete>(paquete, HttpStatus.NOT_FOUND);
 		}
-		
 	}
 
 }
