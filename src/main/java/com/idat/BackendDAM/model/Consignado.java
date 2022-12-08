@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -14,13 +15,15 @@ public class Consignado {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idConsignado;
-	
 	private String nombre;
 	private String apellido;
 	private String telefono;
 	private String dni;
 	private String direccion;
 	private String distrito;
+	
+	@OneToOne
+	private Paquete paquetes;
 	
 	public Integer getIdConsignado() {
 		return idConsignado;

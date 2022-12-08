@@ -10,28 +10,28 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.idat.BackendDAM.model.Remitente;
-import com.idat.BackendDAM.service.RemitenteService;
+import com.idat.BackendDAM.model.Paquete;
+import com.idat.BackendDAM.service.PaqueteService;
 
 @Controller
-@RequestMapping("/v1/remitente")
-public class RemitenteController {
+@RequestMapping("/v1/paquete")
+public class PaqueteController {
 	
 	@Autowired
-	private RemitenteService service;
+	private PaqueteService service;
 	
 	@RequestMapping(path = "/listar", method = RequestMethod.GET)
-	public ResponseEntity<List<Remitente>> listar(){
-		return new ResponseEntity<List<Remitente>>(service.lista(), HttpStatus.OK);
+	public ResponseEntity<List<Paquete>> listar(){
+		return new ResponseEntity<List<Paquete>>(service.listar(), HttpStatus.OK);
 	}
 	
 	@RequestMapping(path = "/listar/{id}", method = RequestMethod.GET)
-	public ResponseEntity<Remitente> obtenerPorId(@PathVariable Integer id){
-		Remitente remitente = service.obtener(id);
-		if(remitente != null) {
-			return new ResponseEntity<Remitente>(remitente, HttpStatus.OK);
+	public ResponseEntity<Paquete> obtenerPorId(@PathVariable Integer id){
+		Paquete paquete = service.obtener(id);
+		if(paquete != null) {
+			return new ResponseEntity<Paquete>(paquete, HttpStatus.OK);
 		}else {
-			return new ResponseEntity<Remitente>(remitente, HttpStatus.NOT_FOUND);
+			return new ResponseEntity<Paquete>(paquete, HttpStatus.NOT_FOUND);
 		}
 	}
 
