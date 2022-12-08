@@ -7,9 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name="az_repartidores")
+@Table(name="AZ_REPARTIDOR")
 public class Repartidor {
 	
 	@Id

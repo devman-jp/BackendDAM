@@ -8,7 +8,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="az_consignados")
+@Table(name="AZ_CONSIGNADO")
 public class Consignado {
 	
 	

@@ -23,8 +23,8 @@ public class ResourceConfig extends ResourceServerConfigurerAdapter {
 		http.anonymous().disable();
 		
 		http.authorizeRequests()
-		.antMatchers("/cliente/**").permitAll()
-		.antMatchers("/hospital/**").permitAll()
+		.antMatchers("/remitente/**").permitAll()
+		.antMatchers("/reparditor/**").permitAll()
 		.and()
 		.exceptionHandling()
 		.accessDeniedHandler(new OAuth2AccessDeniedHandler());

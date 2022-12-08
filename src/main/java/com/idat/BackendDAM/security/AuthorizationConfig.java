@@ -44,8 +44,8 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 		
 		clients.inMemory()
-		.withClient("william")
-		.secret(new BCryptPasswordEncoder().encode("william"))
+		.withClient("azcourier")
+		.secret(new BCryptPasswordEncoder().encode("azcourier"))
 		.authorizedGrantTypes("password", "authorization_code", "refresh_token")
 		.scopes("read", "write", "trust")
 		.accessTokenValiditySeconds(1*60*60)
