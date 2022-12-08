@@ -34,7 +34,5 @@ public class Paquete {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
-	
-	
 
 }
