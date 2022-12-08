@@ -7,7 +7,10 @@ import org.springframework.stereotype.Service;
 
 import com.idat.BackendDAM.model.Remitente;
 import com.idat.BackendDAM.repository.RemitenteRepository;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5212a42d0d5426107a233dbc90eb801b2cd2b7ab
 @Service
 public class RemitenteServiceImpl implements RemitenteService {
 	

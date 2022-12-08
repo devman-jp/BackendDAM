@@ -5,7 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name="AZ_USUARIO")
@@ -18,6 +20,8 @@ public class Usuario {
 	private String password;
 	private String rol;
 	
+	@OneToOne
+	private Repartidor repartidor;
 
 	
 	public Integer getIdUsuario() {
