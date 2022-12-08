@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.idat.BackendDAM.model.Consignado;
 import com.idat.BackendDAM.model.Repartidor;
-import com.idat.BackendDAM.service.ConsignadoService;
 import com.idat.BackendDAM.service.RepartidorService;
 
 @Controller

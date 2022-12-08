@@ -1,12 +1,10 @@
 package com.idat.BackendDAM.model;
 
 import javax.persistence.Entity;
-import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -22,13 +20,7 @@ public class Repartidor {
 	private String nombre;
 	private String apellido;
 	
-	@ManyToOne
-	@JoinColumn(
-			name = "id_usuario",
-			nullable = false,
-			unique = true,
-			foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key(id_usuario) references AZ_USUARIO(id_usuario)")	
-			)
+	@OneToOne
 	private Usuario usuario;
 
 	public Integer getIdRepartidor() {
@@ -71,13 +63,6 @@ public class Repartidor {
 		this.apellido = apellido;
 	}
 
-	public Usuario getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
 	
 	
 
