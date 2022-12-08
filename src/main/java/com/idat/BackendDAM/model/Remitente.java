@@ -8,7 +8,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="az_remitentes")
+@Table(name="AZ_REMITENTE")
 public class Remitente {
 	
 	@Id

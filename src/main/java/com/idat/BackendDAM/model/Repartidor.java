@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="AZ_Repartidor")
+@Table(name="AZ_REPARTIDOR")
 public class Repartidor {
 	
 	@Id
