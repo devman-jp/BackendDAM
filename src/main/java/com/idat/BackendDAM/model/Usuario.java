@@ -20,8 +20,7 @@ public class Usuario {
 	private String password;
 	private String rol;
 	
-	@OneToOne
-	private Repartidor repartidor;
+
 
 	
 	public Integer getIdUsuario() {
