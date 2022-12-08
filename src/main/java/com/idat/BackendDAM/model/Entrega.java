@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -14,15 +15,27 @@ public class Entrega {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idEntrega;
-	
+
+	private String estado;
+
 	private String fecha;
 	
 	@OneToOne
+	@JoinColumn(name = "id_repartidor")
 	private Repartidor repartidor;
 
 	@OneToOne
+	@JoinColumn(name = "id_paquete")
 	private Paquete paquete;
 
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+	
 	public Integer getIdEntrega() {
 		return idEntrega;
 	}

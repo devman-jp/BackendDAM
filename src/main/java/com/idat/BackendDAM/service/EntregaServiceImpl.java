@@ -26,7 +26,11 @@ public class EntregaServiceImpl implements EntregaService {
 
 	@Override
 	public void confirmarEntrega(Integer id) {
-		repository.updateEstadoPaqueteByIdEntrega(id);
+		Entrega foundEntrega = obtener(id);
+		if(foundEntrega != null) {
+			foundEntrega.setEstado("ENTREGADO");
+			repository.saveAndFlush(foundEntrega);
+		}
 	}
 
 }
