@@ -19,9 +19,6 @@ public class Usuario {
 	private String password;
 	private String rol;
 	
-
-
-	
 	public Integer getIdUsuario() {
 		return idUsuario;
 	}
