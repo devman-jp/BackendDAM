@@ -14,7 +14,7 @@ import com.idat.BackendDAM.model.Repartidor;
 import com.idat.BackendDAM.service.RepartidorService;
 
 @Controller
-@RequestMapping("/v1/reparditor")
+@RequestMapping("/v1/repartidor")
 public class RepartidorController {
 	
 
