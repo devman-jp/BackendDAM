@@ -23,8 +23,11 @@ public class ResourceConfig extends ResourceServerConfigurerAdapter {
 		http.anonymous().disable();
 		
 		http.authorizeRequests()
-		.antMatchers("/remitente/**").permitAll()
-		.antMatchers("/reparditor/**").permitAll()
+		.antMatchers("/v1/consignado/**").permitAll()
+		.antMatchers("/v1/entrega/**").permitAll()
+		.antMatchers("/v1/paquete/**").permitAll()
+		.antMatchers("/v1/remitente/**").permitAll()
+		.antMatchers("/v1/repartidor/**").permitAll()
 		.and()
 		.exceptionHandling()
 		.accessDeniedHandler(new OAuth2AccessDeniedHandler());
