@@ -31,4 +31,20 @@ public class Paquete {
 	public void setIdPaquete(Integer idPaquete) {
 		this.idPaquete = idPaquete;
 	}
+
+	public Remitente getRemitente() {
+		return remitente;
+	}
+
+	public void setRemitente(Remitente remitente) {
+		this.remitente = remitente;
+	}
+
+	public Consignado getConsignado() {
+		return consignado;
+	}
+
+	public void setConsignado(Consignado consignado) {
+		this.consignado = consignado;
+	}
 }
