@@ -17,7 +17,7 @@ import com.idat.BackendDAM.repository.UsuarioRepository;
 @Service
 public class UserDetailsService implements org.springframework.security.core.userdetails.UserDetailsService {
 
-	//esto va a permitir aceder al metodo
+	//esto va a permitir acceder al metodo
     @Autowired
     private UsuarioRepository repository;
 	

@@ -36,7 +36,6 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
 	
 	@Override
 	public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-		// TODO Auto-generated method stub
 		super.configure(security);
 	}
 	
@@ -44,11 +43,11 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 		
 		clients.inMemory()
-		.withClient("daniel")
-		.secret(new BCryptPasswordEncoder().encode("123"))
+		.withClient("azcourier")
+		.secret(new BCryptPasswordEncoder().encode("azcourier"))
 		.authorizedGrantTypes("password", "authorization_code", "refresh_token")
 		.scopes("read", "write", "trust")
-		.accessTokenValiditySeconds(1*60*60)
+		.accessTokenValiditySeconds(2*60*60)
 		.refreshTokenValiditySeconds(5*60*60);
 	}
 	
@@ -62,14 +61,8 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
 			public OAuth2AccessToken enhance(OAuth2AccessToken accessToken, OAuth2Authentication authentication) {
 				
 				Map<String, Object> informacionAdicional = new HashMap<>();
-				informacionAdicional.put("Evaluacion Continua", "04");
-				informacionAdicional.put("Alumno", "William");
-				informacionAdicional.put("Alumno", "Jesus");
-				informacionAdicional.put("Alumno", "Daniel");
-				
 				DefaultOAuth2AccessToken token = new DefaultOAuth2AccessToken(accessToken);
 				token.setAdditionalInformation(informacionAdicional);
-				
 				return token;
 			}
 		}, accessTokenConverter));
